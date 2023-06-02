@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera wasd-controls-enabled="true" position="6 1 13"></a-camera>
+    <a-entity light = "type:ambient; intensity:1;"></a-entity>
+    <a-entity animation = "property:rotation; to:0 360 0; easing : linear; loop:true;dur:20000">
+      <a-entity light = "type:directional; intensity:2; color:#f4e99b; decay:2; distance:50; castShadow:true;" position = "-100 18 20" ></a-entity>
+    </a-entity>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+
+      <!--Add Code Here-->
+      <a-asset-item id = "train-obj" src = "./train/tinker.obj"></a-asset-item>
+      <a-asset-item id = "train-mtl" src = "./train/obj.mtl"></a-asset-item>
+      <a-assets-item id = "mountain" src = "./great_mountain/scene.gltf"></a-assets-item>
+      <a-assets-item id = "fence" src = "./old_fence/scene.gltf"></a-assets-item>
+    </a-assets>
+    
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <!--Add code here-->
+    <a-entity obj-model = "obj:#train-obj; mtl:#train-mtl" position = "6 -1 10" scale = "0.02 0.02 0.02" rotation = "-90 0 0"></a-entity>
+
+    
+      <a-sky src = "./sky.jpg"></a-sky>
+  
+    <a-entity gltf-model = "#fence" position = "0 0 10" scale = "0.005 0.005 0.005" rotation = "0 180 0"></a-entity>
+    <a-entity gltf-model = "#fence" position = "2 0 10" scale = "0.005 0.005 0.005" rotation = "0 180 0"></a-entity>
+    <a-entity gltf-model = "#fence" position = "4 0 10" scale = "0.005 0.005 0.005" rotation = "0 180 0"></a-entity>
+    <a-entity gltf-model = "#fence" position = "6 0 10" scale = "0.005 0.005 0.005" rotation = "0 180 0"></a-entity>
+    <a-entity gltf-model = "#fence" position = "8 0 10" scale = "0.005 0.005 0.005" rotation = "0 180 0"></a-entity>
+    <a-entity gltf-model = "#fence" position = "10 0 10" scale = "0.005 0.005 0.005" rotation = "0 180 0"></a-entity>
+    <a-entity gltf-model = "#fence" position = "12 0 10" scale = "0.005 0.005 0.005" rotation = "0 180 0"></a-entity>
+    <a-entity gltf-model = "#mountain" position = "-10 8 -15" scale = "0.02 0.02 0.02" rotation = "0 180 0"></a-entity>
+    
+  </a-scene>
+</body>
+
+</html>
